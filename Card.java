@@ -76,7 +76,7 @@ public class Card {
         return mCardSuit;
     }
     
-    public String getCardAsString(){
+    public String toString(){
         return "The " + mCardType + " of " + mCardSuit;
     }
     
