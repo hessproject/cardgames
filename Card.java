@@ -76,6 +76,7 @@ public class Card {
         return mCardSuit;
     }
     
+    @Override
     public String toString(){
         return "The " + mCardType + " of " + mCardSuit;
     }
