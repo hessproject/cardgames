@@ -5,15 +5,18 @@ import java.util.Random;
 public class Card {
     private final String mCardType;
     private final String mCardSuit;
+    public boolean mFaceDown;
     
     public Card(){
         mCardType = setType(randomize("type"));
         mCardSuit = setSuit(randomize("suit"));
+        mFaceDown = true; 
     }
     
     public Card (int cardType, int cardSuit){
         mCardType = setType(cardType);
         mCardSuit = setSuit(cardSuit);
+        mFaceDown = true;
     }
     
     private String setType(int type){
@@ -79,12 +82,20 @@ public class Card {
         }
     }
     
+    public void flip(){
+        if(mFaceDown){
+            mFaceDown = false;
+        } else {
+            mFaceDown = true;
+        }
+    }
+    
     public String getType(){
-        return mCardType;
+            return mCardType;
     }
     
     public String getSuit(){
-        return mCardSuit;
+            return mCardSuit;
     }
     
     @Override
