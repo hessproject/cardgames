@@ -47,7 +47,7 @@ public class Card {
                     break;
             case 13:cardType = "Joker";
                     break;
-            default: throw new IllegalArgumentException("Not a valid card type");
+            default:throw new IllegalArgumentException("Not a valid card type");
         }
         return cardType;
     } 
@@ -63,7 +63,7 @@ public class Card {
                 break;
             case 3: cardSuit = "Spades";
                 break;
-            default: throw new IllegalArgumentException ("Not a valid Suit");
+            default:cardSuit = null;
         }
         return cardSuit;
     }
