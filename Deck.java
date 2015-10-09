@@ -11,16 +11,11 @@ public class Deck {
     public Deck(){
         populateStandardDeck(false);
     }
+    
     public Deck(boolean includeJokers){
-        if(includeJokers){
-            populateStandardDeck(true);
-        } else {
-            populateStandardDeck(false);
-        }
-    }
-    
+        populateStandardDeck(includeJokers);
+    }   
     /*TODO: Add custom decks, like decks without certain suit or other customizations */
-    
     private void populateStandardDeck(boolean includeJokers){
         if (includeJokers){
             mDeckCards = new ArrayList(MAX_CARDS);
