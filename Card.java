@@ -78,7 +78,7 @@ public class Card {
     
     @Override
     public String toString(){
-        return "The " + mCardType + " of " + mCardSuit;
+        return "a " + mCardType + " of " + mCardSuit;
     }
     
     private int randomize(String partOfCard){
