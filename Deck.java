@@ -24,7 +24,7 @@ public class Deck {
             addJokers();
         } else {
             mDeckCards = new ArrayList(52);
-            mUsedCards = new ArrayList(MAX_CARDS);
+            mUsedCards = new ArrayList(52);
         }
             for(int i=0; i <=3; i++){
                 for(int y=0;y<=12;y++){
@@ -42,32 +42,14 @@ public class Deck {
         }
     }
     
-    public int getCurrentCardsinDeck(){
-        return mCurrentCardsInDeck;
-    }
-    
     public void shuffle(){
         Collections.shuffle(mDeckCards);
-    }
-    
-    public Card dealCard(){
-        if (!isEmpty()){
-            Card card = mDeckCards.get(0);
-            mDeckCards.remove(0);
-            mUsedCards.add(card);
-            mCurrentCardsInDeck--;
-            System.out.printf("Card dealt: %s\n",card.toString());
-            return card;
-        } else {
-            throw new IndexOutOfBoundsException("No cards in deck");
-        }
     }
     
     public void replaceSingleCard(Card card){
         mUsedCards.remove(card);
         mDeckCards.add(card);
     }
-    
     /**
      * Put all cards from mUsedCards back into deck
      */
@@ -84,4 +66,20 @@ public class Deck {
         return mDeckCards.size() < 0;
     }
     
+    public int getCurrentCardsinDeck(){
+        return mCurrentCardsInDeck;
+    }
+    
+    public Card dealCard(){
+        if (!isEmpty()){
+            Card card = mDeckCards.get(0);
+            mDeckCards.remove(0);
+            mUsedCards.add(card);
+            mCurrentCardsInDeck--;
+            System.out.printf("Card dealt: %s\n",card.toString());
+            return card;
+        } else {
+            throw new IndexOutOfBoundsException("No cards in deck");
+        }
+    }
 }

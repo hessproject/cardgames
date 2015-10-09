@@ -68,6 +68,17 @@ public class Card {
         return cardSuit;
     }
     
+    private int randomize(String partOfCard){
+        Random rn = new Random();
+        switch (partOfCard) {
+            case "type":
+                return rn.nextInt(14);
+            case "suit":
+                return rn.nextInt(4);
+            default: throw new IllegalArgumentException("Not a valid randomize selection");
+        }
+    }
+    
     public String getType(){
         return mCardType;
     }
@@ -79,17 +90,6 @@ public class Card {
     @Override
     public String toString(){
         return "a " + mCardType + " of " + mCardSuit;
-    }
-    
-    private int randomize(String partOfCard){
-        Random rn = new Random();
-        switch (partOfCard) {
-            case "type":
-                return rn.nextInt(14);
-            case "suit":
-                return rn.nextInt(4);
-            default: throw new IllegalArgumentException("Not a valid randomize selection");
-        }
     }
 }
     
